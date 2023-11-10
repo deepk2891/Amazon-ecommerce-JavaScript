@@ -1,5 +1,6 @@
 const products = [
     {
+        id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
         image: "images/products/athletic-cotton-socks-6-pairs.jpg",
         name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
         rating: {
@@ -9,6 +10,7 @@ const products = [
         priceCents: 1090,
     },
     {
+        id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
         image: "images/products/intermediate-composite-basketball.jpg",
         name: "Intermediate Size Basketball",
         rating: {
@@ -18,6 +20,7 @@ const products = [
         priceCents: 2095,
     },
     {
+        id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
         image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
         name: "Adults Plain Cotton T-Shirt - 2 Pack",
         rating: {
@@ -68,7 +71,7 @@ products.forEach((product) => {
                 <img src="images/icons/checkmark.png" />
                 Added
             </div>
-            <button class="add-to-cart-button button-primary js-add-to-cart" data-product-name="${ product.name }">Add to Cart</button>
+            <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${ product.id }">Add to Cart</button>
         </div >
         `
 })
@@ -82,11 +85,29 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML
 
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click',() => {
-        const productName = button.dataset.productName
-        cart.push({
-            productName: productName,
-            quantity: 1
+        const productId = button.dataset.productId
+
+        let matchingItem
+
+        cart.forEach((item) => {
+            if (productId === item.productId)
+            {
+                matchingItem = item
+            }
         })
+        if (matchingItem)
+        {
+            matchingItem.quantity += 1
+        }
+        else
+        {
+            cart.push({
+                productId: productId,
+                quantity: 1
+            })
+
+        }
+
         console.log(cart)
     })
 })
