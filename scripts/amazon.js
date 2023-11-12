@@ -28,6 +28,25 @@ const products = [
             count: 56,
         },
         priceCents: 799,
+    },{
+        id: "id1",
+        image: "images/products/backpack.jpg",
+        name: "Black Backpack",
+        rating: {
+            stars: 4,
+            count: 323
+        },
+        priceCents: 1999
+    },
+    {
+        id: "id2",
+        image: "images/products/umbrella.jpg",
+        name: "Large Green Umbrella",
+        rating: {
+            stars: 5,
+            count: 366
+        },
+        priceCents: 2699
     }
 ];
 
