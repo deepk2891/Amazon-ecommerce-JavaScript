@@ -95,6 +95,9 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
                 matchingItem = item
             }
         })
+
+        const quantitySelector = document.querySelector(`.js-quantity-selector-${ productId }`)
+
         if (matchingItem)
         {
             matchingItem.quantity += 1
