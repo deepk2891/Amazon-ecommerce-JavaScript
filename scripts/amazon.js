@@ -142,5 +142,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         console.log(cartQuantity)
 
         console.log(cart)
+
+        const addedMessage = document.querySelector(`.js-added-to-cart-${ productId }`);
     })
 })
