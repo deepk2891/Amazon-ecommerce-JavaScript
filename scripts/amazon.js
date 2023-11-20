@@ -144,5 +144,6 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         console.log(cart)
 
         const addedMessage = document.querySelector(`.js-added-to-cart-${ productId }`);
+        addedMessage.classList.add('added-to-cart-visible')
     })
 })
