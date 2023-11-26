@@ -61,4 +61,5 @@ cart.forEach(cartItem => {
     `
 });
 
-console.log(cartSummryHTML)
+
+document.querySelector('.js-order-summary').innerHTML = cartSummryHTML
